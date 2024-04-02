@@ -5,12 +5,14 @@
     </head>
     <body>
         <script>
-            function solution(){
+            function solution(a){
                 let answer;
-
+                //Math함수 잘 알아두기
+                //ceill은 나는 결과값 '올림'처리!
+                answer = Math.ceil(a/12);
                 return answer;
             }
-            console.log(solution());
+            console.log(solution(178));
         </script>
     </body>
 </html>
