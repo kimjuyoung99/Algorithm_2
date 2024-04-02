@@ -1,16 +1,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>출력결과</title>
+        <title>10부제</title>
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
-
+            //'day'와 같이 되도록 변수명은 식별 하능하게끔 하자
+            function solution(day,arr){
+                let answer=0;
+                for(let x of arr){
+                    if(x % 10 === day) answer++;
+                }
                 return answer;
             }
-            console.log(solution());
+            arr=[25, 23, 11, 47, 53, 17, 33];
+            console.log(solution(3,arr));
         </script>
     </body>
 </html>
