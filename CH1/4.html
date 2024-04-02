@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                //'0'으로 꼭 선언하기! 선언 안하면 임의의 더미 데이터가 입력되어 'NaN'이런 걸로 출력됨
+                let answer=0;
+                for(let i = 1; i <= n ; i++){
+                    answer=answer+i;
+                }
+                return answer;
+            }
+            console.log(solution(10));
+        </script>
+    </body>
+</html>
