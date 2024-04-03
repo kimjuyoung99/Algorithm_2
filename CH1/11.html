@@ -1,16 +1,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>출력결과</title>
+        <title>대문자 찾기</title>
+        <h3>한 개의 문자열을 입력받아 해당 문자열에 알파벳 대문자가 몇 개 있는지 알아내는 프로그램 을 작성하세요.
+        </h3>
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
+            ///x.toUpperCase() : x 순서에 있는 문자를 무조건 대문자로 바꿔준다. 대문자였어도 대문자로..
+            function solution(s){         
+                let answer="";
+                for(let x of s){
+                    let num=x.charCodeAt();
+                    if(num>=97 && num<=122) answer+=String.fromCharCode(num-32);
+                    else answer+=x;
+
+                    //if(x===x.toLowerCase()) answer+=x.toUpperCase();
+                    //else answer+=x;
+                }
 
                 return answer;
+
             }
-            console.log(solution());
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
         </script>
     </body>
 </html>
