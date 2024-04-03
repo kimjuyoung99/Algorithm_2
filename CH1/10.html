@@ -1,24 +1,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>A를 #으로</title>
-        <h3>대문자로 이루어진 영어단어가 입력되면 단어에 포함된 ‘A'를 모두 ’#‘으로 바꾸어 출력하는 프로그램을 작성하세요.
-        </h3>
+        <title>문자 찾기</title>
+        <h3>한 개의 문자열을 입력받고, 특정 문자를 입력받아 해당 특정문자가 입력받은 문자열에 몇 개 존재하는지 알아내는 프로그램을 작성하세요.
+            문자열의 길이는 100을 넘지 않습니다.</h3>
     </head>
     <body>
         <script>
-            function solution(s){
-                let answer="";
-
-               for(let x of s){
-                if(x=='A') answer+='#';
-                else answer+=x;
-               }
-
-                return answer;
+            function solution(s,A){
+                let count =0 ;
+                for(let x of s) if(x === A) count++;
+                return count;
             }
-            let str ="BANANA";
-            console.log(solution(str));
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str,"R"));
         </script>
     </body>
 </html>

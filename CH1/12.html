@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대문자로 통일</title>
+        <h3>대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자로 모두 통일하여 문자열을 출력 하는 프로그램을 작성하세요.</h3>
+    </head>
+    <body>
+        <script>
+            ///x.toUpperCase() : x 순서에 있는 문자를 무조건 대문자로 바꿔준다. 대문자였어도 대문자로..
+            //+= 보다는 .push를 쓰자. answer을 바로 return 하지 말고 
+            //.join('')를 써서 배열 요소를 단일 문자열로 연결하자
+            function solution(s){
+                let answer=[];
+                for(let x of s){
+                    //console.log(toUpperCase(),x);
+                    answer.push(x.toUpperCase());
+                }
+                return answer.join('');
+            }
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

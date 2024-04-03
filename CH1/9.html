@@ -1,16 +1,24 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>출력결과</title>
+        <title>A를 #으로</title>
+        <h3>대문자로 이루어진 영어단어가 입력되면 단어에 포함된 ‘A'를 모두 ’#‘으로 바꾸어 출력하는 프로그램을 작성하세요.
+        </h3>
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
+            function solution(s){
+                let answer="";
 
+               for(let x of s){
+                if(x=='A') answer+='#';
+                else answer+=x;
+               }
                 return answer;
             }
-            console.log(solution());
+
+            let str ="BANANA";
+            console.log(solution(str));
         </script>
     </body>
 </html>
