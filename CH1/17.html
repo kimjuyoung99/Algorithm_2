@@ -1,17 +1,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>문제 이름</title>
-        <h3>문제 내용</h3>
+        <title>중복단어제거</title>
+        <h3>N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요. 출력하는 문자열은 원래의 입력순서를 유지합니다.</h3>
     </head>
     <body>
         <script>
-            function solution(){
+            function solution(s){  
                 let answer;
-
+                console.log(s.indexOf("time"));
+                answer=s.filter(function(v,i){
+                    return s.indexOf(v)===i;
+                });
                 return answer;
             }
-            console.log(solution());
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
         </script>
     </body>
 </html>
+사실 여기가 이해가 잘 안가..
+answer=s.filter(function(v,i){
+    return s.indexOf(v)===i;
+});
