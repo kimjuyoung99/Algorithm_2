@@ -6,12 +6,21 @@
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
-
-                return answer;
+            function solution(str){
+                let answer=[];
+                for(let x of str){
+                    if(x >= 65 && x<=90) answer.push(x.toLowerCase());
+                    else answer.push(x.toUpperCase());
+                }
+                return answer.join('');
             }
-            console.log(solution());
+            let str= "StuDY";
+            console.log(solution(str));
         </script>
     </body>
 </html>
+return answer.join; 한 경우 
+->['S', 'T', 'U', 'D', 'Y']
+
+return answer.join(''); 한 경우 
+-> STUDY

@@ -6,12 +6,21 @@
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
-
+            function solution(s){
+                let answer="";
+                for(let i = 0 ; i < s.length; i++){
+                    console.log("s.indexOf(s[i]) : "+s.indexOf(s[i]));
+                    console.log("i : "+i);
+                    if(s.indexOf(s[i])===i) {
+                        console.log("s.indexOf(s[i])===i");
+                        answer+=s[i];
+                        console.log("answer : " + answer);
+                    };
+                }
                 return answer;
             }
-            console.log(solution());
+            
+            console.log(solution("ksekkset"));
         </script>
     </body>
 </html>
