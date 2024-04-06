@@ -12,15 +12,17 @@
                     console.log("s.indexOf(s[i]) : "+s.indexOf(s[i]));
                     console.log("i : "+i);
                     if(s.indexOf(s[i])===i) {
-                        console.log("s.indexOf(s[i])===i");
+                        console.log("s.indexOf(s[i])=== "+ i);
                         answer+=s[i];
                         console.log("answer : " + answer);
                     };
                 }
                 return answer;
             }
-            
-            console.log(solution("ksekkset"));
+            //여태까지 이해가 안갔던 이유! indexOf 메서드의 특성을 잘 몰라서 그랬다.
+            //indexOf 메서드는 주어진 요소의 첫 번째 등장 위치의 인덱스를 반환하는데, 만약 중복된 요소가 있다면 첫 번째 등장하는 위치의 인덱스만을 반환한다.
+            //따라서 s.indexOf(s[i])가 0,1,2,3,4,5,6이 아닌 0,0,0,3,3,3이었던 것~
+            console.log(solution("aaabbb"));
         </script>
     </body>
 </html>
