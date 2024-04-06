@@ -1,8 +1,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>문제 이름</title>
-        <h3>문제 내용</h3>
+        <title>가운데 문자 출력</title>
+        <h3>소문자로 된 단어(문자열)가 입력되면 그 단어의 가운데 문자를 출력하는 프로그램을 작성하세 요. 단 단어의 길이가 짝수일 경우 가운데 2개의 문자를 출력합니다.
+        </h3>
     </head>
     <body>
         <script>
@@ -19,3 +20,18 @@
         </script>
     </body>
 </html>
+
+Math.floor() 함수는 주어진 숫자의 소수 부분을 버리고, 정수 부분만을 반환합니다. 
+즉, 소수점 이하를 모두 버리고 가장 가까운 작은 정수를 반환
+
+.substring() 메서드는 문자열에서 지정한 시작 인덱스부터 지정한 끝 인덱스 전까지의 부분 문자열을 반환합니다. 
+이 메서드는 두 개의 매개변수를 받습니다. 첫 번째 매개변수는 시작 인덱스이고, 두 번째 매개변수는 끝 인덱스입니다. 끝 인덱스는 선택적으로 지정할 수 있으며, 
+지정하지 않으면 문자열의 끝까지를 의미합니다.
+
+let str = "study";
+let result = str.substring(1, 4);
+console.log(result); // 출력 결과: "tud"
+
+let str = "study";
+let result = str.substring(2);
+console.log(result); // 출력 결과: "udy"
