@@ -6,12 +6,34 @@
     </head>
     <body>
         <script>
-            function solution(){
-                let answer;
+            function rockPaperScissors(N,A,B){
+                //이길 수 있는 손동작으로 바꾸는 것.
+                //가위 일 경우 보로, 바위일 경우 가위에 해당하는 숫자로 바꿔준 후,
+                //이 숫자랑 B랑 동일하면 이길 수 있는 조건이라는 뜻이므로 A가 이긴거
+                const hands = {1:3, 2:1, 3:2};
+                const results = [];
 
-                return answer;
+                for(let  i = 0 ; i < N ; i++){
+                    if(A[i] === B[i]){
+                        results.push('D');//비김
+                    }
+                    else if(hands[A[i]]===B[i]){
+                        results.push('A');//A가 이김
+                    }
+                    else{
+                        results.push('B');//B가 이김
+                    }
+                }
+                return results;
             }
-            console.log(solution());
-        </script>
+            const N = 5;
+            const A = [2,3,3,1,3];
+            const B = [1, 1, 2, 2, 3];
+
+            const results=rockPaperScissors(N,A,B);
+            //배열의 각 요소에 대해 반복 실행하는 코드.
+            results.forEach((result)=> console.log(result));
+            
+</script>
     </body>
 </html>
