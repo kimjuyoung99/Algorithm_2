@@ -1,28 +1,67 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>점수계산</title>
-        <h3>문제 내용</h3>
-    </head>
-    <body>
-        <script>
-            function solution(arr){
-                let sum = 0;
-                let flag = 0, Accumulated_points = 1;//누적점수
-                
-                for(let i = 0 ; i < arr.length ; i++){
-                    if(arr[i] === 1){
-                        sum += Accumulated_points;
-                        Accumulated_points++;
-                    }
-                    else Accumulated_points = 1;
-                    console.log('sum : '+sum);
-                }
+  <head>
+    <meta charset="UTF-8" />
+    <title>점수계산</title>
+    <h3>문제 내용</h3>
+  </head>
+  <body>
+    <script>
+      //내가 작성한 답
+      function solution(arr) {
+        let sum = 0;
+        let Accumulated_points = 1; //누적점수
 
-                return sum;
-            }
-            let arr =[1,0,1,1,1,0,0,1,1,0];
-            console.log(solution(arr));
-        </script>
-    </body>
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === 1) {
+            sum += Accumulated_points;
+            Accumulated_points++;
+          } else Accumulated_points = 0;
+          //1이 아니라 0으로 초기화 해야 함용~~ 안그러면 오답 후
+          //바로 오는 정답에 1점이 아닌 2점이 부여될 위험이 있어염
+          console.log("sum : " + sum);
+        }
+
+        return sum;
+      }
+      let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+      console.log(solution(arr));
+
+      //GPT가 생각한 좋은 코드
+      function solution(results) {
+        let totalScore = 0;
+        let currentStreak = 0; // 연속 정답 수를 추적하는 변수
+
+        results.forEach((result) => {
+          if (result === 1) {
+            currentStreak++;
+            totalScore += currentStreak;
+          } else {
+            currentStreak = 0;
+          }
+        });
+
+        return totalScore;
+      }
+
+      let results = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+      console.log(solution(results)); // 이 코드로도 동일한 결과가 출력됩니다.
+
+      //JS 강사님 답
+      function solution(arr1) {
+        let answer = 0,
+          cnt = 0;
+        for (let x of arr) {
+          if (x === 1) {
+            cnt++;
+            answer += cnt;
+          } else cnt = 0;
+        }
+
+        return answer;
+      }
+
+      let arr1 = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+      console.log(solution(arr));
+    </script>
+  </body>
 </html>
