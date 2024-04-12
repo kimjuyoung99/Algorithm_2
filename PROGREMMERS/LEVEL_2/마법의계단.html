@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>문제 이름</title>
+        <h3>문제 내용</h3>
+    </head>
+    <body>
+        <div id="link-container"></div>
+
+        <script>
+            const linkContainer = document.getElementById('link-container');
+            const link = document.createElement('a');
+            link.href = "https://school.programmers.co.kr/learn/courses/30/lessons/148653";
+            link.innerText="마법의 계단 프로그래머스 과제로 이동하기"
+            linkContainer.appendChild(link);
+            
+            function solution(storey){
+                const nums = storey.toString().split('').map(Number);
+                //storey : 현재 민수가 있는 층
+                //얘를 문자열로 변환하고, 각 원소를 숫자로 변환해서 num 배열에 저장
+                // 2554 -> [2, 5, 5, 4]
+                let help = 0;//올림 수 저장할 변수
+                let cnt = 0;//버튼을 누르는 최소 횟수 저장할 변수
+                for(let i = nums.length-1 ; i>0 ; i++){
+                    //배열 nums를 뒤에서 앞으로 순회하면서 처리. 
+                    const num = nums[i] + help;
+                    help = 0;
+                    //Num : 현재 자릿수의 값 + help 올림 넘어온 값, 이후 help은 0으로 초기화
+                    if(num > 5){
+                        cnt += 10-num
+                        help = 1
+                    //num > 5인 경우, 10에서 num을 뺀 값만큼 버튼을 누르는 것이 더 적은 횟수를 요구
+                    //이때 다음 자릿수에 1을 넘겨주기 위해 help를 1로 설정
+                    }else if (num === 5 && nums[i-1]){
+                        if(nums[i-1] >= 5){
+                            cnt += num
+                            help = 1
+                        }else cnt += num
+                    //num이 5이고, 다음 자릿수(nums[i-1])가 존재할 때, 다음 자릿수가 5 이상이면 num만큼 버튼을 누르고 다음 자릿수에 1을 넘겨준다. 
+                    //그 외의 경우도 num만큼 버튼을 누른다. 그 외의 경우는 단순히 num만큼 버튼을 누른다.
+                    }else cnt+= num
+                }
+                return cnt + help;
+                //최종적으로 계산된 버튼 누름 횟수 cnt와 마지막으로 넘겨진 올림 help를 더해 반환 마지막 자리 처리 후에도 올림이 남아있을 수 있기 때문
+            
+            console.log(solution());
+            }
+        </script>
+    </body>
+</html>
