@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 이름</title>
+    <h3>문제 내용</h3>
+  </head>
+  <body>
+    <script>
+      function solution(n, lost, reserve) {
+        var answer = 0;
+        var count = new Array(5).fill(1);
+        var lost = [2,4];
+        var reserve = [1, 3, 5];
+
+        for (i = 0; i < lost.length; i++) {
+          count[lost[i] - 1]--;
+        }
+        console.log("Count after subtracting lost:", count);
+        for (i = 0; i < reserve.length; i++) {
+          count[reserve[i] - 1]++;
+        }
+        console.log("Count after subtracting lost:", count);
+
+        return answer;
+      }
+      //1. 인당 돗자리 갯수인 count 배열을 생성 우선 체육복을 모두 1개씩 가지고 있다고 가정
+      //2. for 반복문 돌리면서, 양옆에 +-1 자리에 lost와 reverse가 붙어있을 경우, lost 해당 인덱스 count에는 +1, reverse 해당 인덱스 count에는 -1을 해준다.
+      //3. count 배열을 for 반복문으로 쭉 돌면서, 해당 인덱스의 값이 1 이상일 경우에만 answer의 값을 ++ 해준다.
+      console.log(solution());
+    </script>
+  </body>
+</html>
