@@ -10,6 +10,9 @@
                 let answer="";
                 let cnt=1;
                 s=s+" ";
+                //주어진 문자열 s의 끝에 공백 문자를 추가하여, 
+                //반복문에서 마지막 문자를 처리할 때도 같은 로직을 적용할 수 있게 함
+
                 for(let i=0; i<s.length-1; i++){
                     if(s[i]===s[i+1]) cnt++;
                     else{
@@ -19,9 +22,7 @@
                     }
                 }
                 return answer;
-            }
-            console.log("그냥 main에서 작업하고 바로 commit 해버지라~");
-            
+            }            
             let str="KKHSSSSSSSE";
             console.log(solution(str));
         </script>
