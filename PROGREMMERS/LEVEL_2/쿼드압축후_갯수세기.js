@@ -66,3 +66,5 @@ const arr2 = [
     [0, 0, 0, 0, 1, 1, 1, 1]
 ];
 console.log(solution(arr2)); // 출력: [10, 15]
+console.log(solution(arr2)); // 출력: [10, 15]
+
