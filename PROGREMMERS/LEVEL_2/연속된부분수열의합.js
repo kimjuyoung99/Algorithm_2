@@ -20,4 +20,4 @@ function solution(sequence, k) {
     }    
     
     return answer;
-}
+} console.lpg
