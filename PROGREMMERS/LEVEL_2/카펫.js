@@ -2,18 +2,9 @@ function solution(brown, yellow) {
     var answer = [];
     var Ybox = [];
     let bw = 0, bl = 0;
-    //1
-    // for(let i = yellow ; i >= 0 ; i--){
-    //     for(let j = yellow ; j >= 0 ; j--){
-    //         if(i * j == yellow && i <= j){
-    //             Ybox.push([j,i]);
-    //         }
-    //     }
-    // }
-    //이렇게 돌리면 시간초과가 나서 안돌아간다ㅠㅠ 이렇게 해야 시간복잡도가 줄고, 통과가 됨.
-    //Math.sqrt 함수에 대해서 잘 공부하고 쓸때 낯설지 않아야겠어...
-       // yellow의 약수 쌍을 찾아서 확인
-       for (let i = 1; i <= Math.sqrt(yellow); i++) {
+
+   // yellow의 약수 쌍을 찾아서 확인
+    for (let i = 1; i <= Math.sqrt(yellow); i++) {
         if (yellow % i === 0) {
             let j = yellow / i;
             let Bw = j + 2;
@@ -24,22 +15,11 @@ function solution(brown, yellow) {
             }
         }
     }
-    console.log(Ybox);
-    
-    for(let i = 0 ; i < Ybox.length ; i++){
-        let Bw = Ybox[i][0] + 2;
-        let Bl = Ybox[i][1] + 2;
-        let Barea = Bw * Bl;
-        console.log("갈색넓이 : ",Barea);
-        if((Barea - yellow) == brown) {
-            console.log("들어옴");
-            answer.push(Bw,Bl);
-        };
-    }
     
     
     return answer;
 }
+
 // 주의할 부분 : 6,7라인에서  i = yellow 이 아니라  i = yellow - 1 로 두면 test case 1,2를 만족하지 못한다 주의!
 // 1. 우선 yellow를 기준으로, 곱해서 yellow 의 수가 나오는 경우의 수를 배열로 구한다. 
 // -> yellow가 24면  [ [ 6, 4 ], [ 8, 3 ], [ 12, 2 ] ] (반대의 경우는 안해줌. 가로가 긴 기준으로만)
