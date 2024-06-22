@@ -1,3 +1,34 @@
+//다시 해 본 버전(킹치만 지피티 도움 받음..하지만 이해는 더 했음)
+function solution(sequence, k) {
+    let start = 0; // 슬라이딩 윈도우의 시작 인덱스
+    let end = 0;   // 슬라이딩 윈도우의 끝 인덱스
+    let current_sum = 0; // 현재 슬라이딩 윈도우의 합
+    let best_range = [0, sequence.length - 1]; // 가장 짧은 부분 수열의 시작과 끝 인덱스
+    
+    while(end < sequence.length ){
+        current_sum += sequence[end];
+        
+        while(start <= end && current_sum > k){
+            current_sum -= sequence[start];
+            start++;
+        }
+        
+        if(current_sum === k){
+            if((end-start) < (best_range[1] - best_range[0])){
+                best_range = [start, end];
+            }
+        }
+        
+        end++;
+        
+    }
+    
+    
+    return best_range;
+}
+
+
+//옜날 버전
 function solution(sequence, k) {
     let answer = null;
     let sum = sequence[0]; //수열의 합 인덱스 0으로 초기화
