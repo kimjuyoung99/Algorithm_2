@@ -1,16 +1,15 @@
-function solution(cards1, cards2, goal) {
-    let p1 = 0, p2 = 0;
+function solution(n) {
+    const isPrime = Array(n + 1).fill(true);
     
-    for(let word of goal){
-        if(word === cards1[p1] && p1 < cards1.length){
-            p1++;
+    isPrime[0] = isPrime[1] = false;
+    
+    for (let i = 2; i * i <= n; i++) {
+        if (isPrime[i]) {
+            for (let j = i * i; j <= n; j += i) {
+                isPrime[j] = false;
+            }
         }
-        else if(word === cards2[p2] && p2 < cards2.length){
-            p2++;
-        }
-        else return "No";
     }
     
-    return "Yes";
-    
+    return isPrime.filter(prime => prime).length;
 }
